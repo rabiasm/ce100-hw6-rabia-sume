@@ -37,3 +37,4 @@ All static library path configurations are placed in CryptoppStaticLibraryUsageS
 #include <string>
 using namespace std;
 using namespace CryptoPP;
+  
