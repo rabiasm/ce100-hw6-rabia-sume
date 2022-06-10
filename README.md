@@ -1,10 +1,37 @@
+# Crypto++ Sample Application
+
+CryptoppStaticLibraryUsageSample has the following samples
+
+c
+void sha1Operation(void);
+void sha256Operation(void);
+void sha512Operation(void);
+int aesOperation(void);
+void desOperation(void);
+void hmacSha1Operation(void);
+void hmacSha256Operation(void);
+void crcOperation(void);
+void md5Operation(void);
+
+
+Also includes following utilies
+
+c
+std::string bin2hex(const std::string& input)
+void printBinHex(char* title, const void* data, size_t size)
+void printBinHexAscii(char* title, const void* data, size_t size)
+string secByteBlockToHex(SecByteBlock byteBlock)
+string byteBlockToHex(unsigned char* data, size_t length)
+
 # Compile Crypto++ Library
-Open Crypto++ Solution and Compile cryptlib project to generate static library file with Debug  or Releasewith Win32 settings
+Open Crypto++ Solution and Compile `cryptlib` project to generate static library file with `Debug ` or `Release`with `Win32 `settings
+batch
 ../cryptopp850/cryptest.sln
 
 
 Your output will be located at
 
+batch
 ..\cryptopp850\Win32\Output\Debug\cryptlib.lib
 
 
@@ -12,11 +39,13 @@ Your output will be located at
 
 Open crypto test application
 
+batch
 ../CryptoppTestApplication/CryptoppTestApplication.sln
 
 
-All static library path configurations are placed in CryptoppStaticLibraryUsageSample.cpp file as follow, check static library path is correct for your solution. Path is relative. 
+All static library path configurations are placed `in CryptoppStaticLibraryUsageSample.cpp` file as follow, check static library path is correct for your solution. Path is relative. 
 
+c
 #ifdef _DEBUG
 #pragma comment(lib, "../../cryptopp850/Win32/Output/Debug/cryptlib.lib")
 #else
@@ -37,4 +66,3 @@ All static library path configurations are placed in CryptoppStaticLibraryUsageS
 #include <string>
 using namespace std;
 using namespace CryptoPP;
-  
